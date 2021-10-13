@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import "reset";
+@import "grid";
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
+body {
+  font-size: 16px;
+}
+
+.container-fluid{
+
+  margin: 0;
+  padding: 0;
+}
+
+#cubeSpace{
+  background: black;
+  height: 80vh;
+}
+
+body {
+  background-color: black !important;
+}
+
+
+#sizeUp{
+  background-color: #F5C63C!important;
+  border-color: #F5C63C!important;
+  color: white !important;
+  text-shadow: 1px 1px black;
+}
+#sizeDown{
+  background-color:  #F47F6B !important;
+  border-color: #F47F6B !important;
+  color: white !important;
+  text-shadow: 1px 1px black;
+
+}
+#spinUp{
+  background-color: #BB5098 !important;
+  border-color: #BB5098 !important;
+  color: white !important;
+  text-shadow: 1px 1px black;
+}
+#spinDown{
+  background-color: #5344A9 !important;
+  border-color: #5344A9 !important;
+  color: white !important;
+  text-shadow: 1px 1px black;
+
+}
