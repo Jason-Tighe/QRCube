@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 import Blop from '../components/Blop';
 
 export default function App(props) {
-	const [scale, setScale] = useState(175);
+	const [scale, setScale] = useState(50);
 	const [spin, setSpin] = useState(0);
+	const [hertSpin, setHertSpin] = useState(0);
+	const [vertSpin, setVertSpin] = useState(0);
+	const [increment, setIncrement] = useState(0);
 
 	const increase = () => {
 		let i = 10;
 		setScale(scale + i);
+		console.log(scale);
+	};
+
+	const plus = () => {
+		let i = 1;
+		setIncrement(increment + i);
 	};
 
 	const decrease = () => {
@@ -18,16 +27,30 @@ export default function App(props) {
 	const stopSpin = () => {
 		setSpin(0.01);
 	};
+	//bad way to rotate the face from the top face.
+	const vertSpinner = () => {
+		let i = (90 * Math.PI) / 180;
+		console.log(i);
+		setVertSpin(vertSpin + i);
+	};
 
-	const startSpin = () => {
-		setSpin(-0.01);
+	//bad way to rotate the face side face
+	const hertSpinner = () => {
+		let i = (90 * Math.PI) / 180;
+		setHertSpin(hertSpin + i);
 	};
 
 	return (
 		<>
 			<div className="container">
 				<div id="cubeSpace" className="container-fluid">
-					<Blop scale={scale} spin={spin} />
+					<Blop
+						scale={scale}
+						spin={spin}
+						hertSpin={hertSpin}
+						vertSpin={vertSpin}
+						increment={increment}
+					/>
 				</div>
 				<div className="container bg-light">
 					<h1 className="display-6">Welcome!</h1>
@@ -66,10 +89,18 @@ export default function App(props) {
 						<button
 							id="spinUp"
 							className="col display-6 btn btn-light"
-							onClick={startSpin}
+							onClick={vertSpinner}
 						>
 							{' '}
-							Start Spin{' '}
+							Y Face Rotate{' '}
+						</button>
+						<button
+							id="spinUp"
+							className="col display-6 btn btn-light"
+							onClick={hertSpinner}
+						>
+							{' '}
+							X Face Spin{' '}
 						</button>
 					</div>
 				</div>
